@@ -34,7 +34,9 @@ names.forEach((personName) => console.log(personName));
 
 provinces.forEach((province) => console.log(province));
 
+
 names.forEach((nam, provIndex) =>
+
   console.log(`${nam} (${provinces[provIndex]})`)
 );
 
@@ -57,6 +59,10 @@ console.log(provinceInOrder);
 // Create a boolean array using `map` and `some` to determine if a name contains the letter 'S'
 
 const nameContainS = names.map((nam) =>
+  /**
+   * split() each name into an array of charecters(because some() is an array funct it cant iterate over strings)
+   * use some to check if on each array there is letter "s" or "s"
+   */
   nam.split("").some((letter) => letter === "S" || letter === "s")
 );
 
@@ -64,8 +70,14 @@ console.log(nameContainS);
 
 // Use `reduce` to transform the names array into an object mapping names to their respective provinces.
 
+/**
+ * adds a property to accumulator object 'acc' on each element of names
+ * Then the property key is the current name 'nam'
+ * 
+ */
 const nameProvince = names.reduce((acc, nam, index) => {
   acc[nam] = provinces[index];
+
   return acc;
 }, {});
 console.log(nameProvince);
