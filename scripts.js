@@ -22,5 +22,6 @@ provinces.forEach(province => console.log(province))
 
 names.forEach((nam, provIndex) => console.log(`${nam} (${provinces[provIndex]})`))
 
+//Use `map` to create a new array of province names in all uppercase. Log the new array to the console.
 
-
+provinces.map(province => console.log(province.toUpperCase()))
